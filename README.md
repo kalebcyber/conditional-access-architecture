@@ -53,7 +53,7 @@ The policy targets multiple privileged roles rather than individual users so the
 
 A dedicated emergency access account was excluded to reduce the risk of tenant lockout.
 
-![CA01 Admin MFA](screenshots/01-CA01-Admin-MFA-Policy.png)
+![CA01 Admin MFA](images/01-CA01-Admin-MFA-Policy.png)
 
 ### Design Decisions
 
@@ -71,7 +71,7 @@ This policy provides a baseline MFA requirement for workforce identities.
 
 Internal users are protected separately from external B2B identities so different identity populations can be governed independently.
 
-![CA02 User MFA](screenshots/02-CA02-User-MFA-Policy.png)
+![CA02 User MFA](images/02-CA02-User-MFA-Policy.png)
 
 ### Design Decisions
 
@@ -90,7 +90,7 @@ This policy blocks authentication attempts from legacy client types that do not 
 
 Legacy authentication can bypass or weaken modern identity security controls, so removing these older authentication paths reduces credential-based attack exposure.
 
-![CA03 Legacy Authentication](screenshots/03-CA03-Block-Legacy-Authentication.png)
+![CA03 Legacy Authentication](images/03-CA03-Block-Legacy-Authentication.png)
 
 ### Design Decisions
 
@@ -109,7 +109,7 @@ This policy protects B2B collaboration identities separately from the internal w
 
 External identities may authenticate through another organization, so separating guest access from employee policies provides cleaner identity governance and policy design.
 
-![CA04 Guest External MFA](screenshots/04-CA04-Guest-External-MFA.png)
+![CA04 Guest External MFA](images/04-CA04-Guest-External-MFA.png)
 
 ### Targeted Identity Types
 
@@ -131,7 +131,7 @@ This policy uses Microsoft Entra ID Protection risk signals to require additiona
 
 The policy responds to **Medium** and **High** sign-in risk instead of treating every authentication event identically.
 
-![CA05 Risky Sign In MFA](screenshots/05-CA05-Risky-SignIn-MFA.png)
+![CA05 Risky Sign In MFA](images/05-CA05-Risky-SignIn-MFA.png)
 
 ### Design Decisions
 
@@ -149,7 +149,7 @@ A trusted named location was created using a known public network address.
 
 This policy evaluates sign-ins from any location while excluding the trusted network. Sign-ins originating outside that trusted location are required to complete MFA.
 
-![CA06 Untrusted Location MFA](screenshots/06-CA06-Untrusted-Location-MFA.png)
+![CA06 Untrusted Location MFA](images/06-CA06-Untrusted-Location-MFA.png)
 
 ### Design Decisions
 
@@ -177,7 +177,7 @@ Applicable policies included:
 - CA02 - Require MFA for Users
 - CA06 - Require MFA from Untrusted Locations
 
-![Admin What If Validation](screenshots/07-WhatIf-Admin-Policy-Validation.png)
+![Admin What If Validation](images/07-WhatIf-Admin-Policy-Validation.png)
 
 This demonstrated that Conditional Access policies can work together rather than functioning as isolated controls.
 
@@ -194,7 +194,7 @@ The following policies were evaluated:
 - CA05 - Require MFA for Risky Sign-Ins
 - CA06 - Require MFA from Untrusted Locations
 
-![High Risk What If Validation](screenshots/08-WhatIf-HighRisk-Policy-Validation.png)
+![High Risk What If Validation](images/08-WhatIf-HighRisk-Policy-Validation.png)
 
 This validated the risk-based Conditional Access design and confirmed that identity, role, risk, and location signals could be combined during policy evaluation.
 
@@ -204,7 +204,7 @@ This validated the risk-based Conditional Access design and confirmed that ident
 
 Six Conditional Access policies were created and kept in **Report-only mode** for safe testing and validation.
 
-![Conditional Access Policy Overview](screenshots/09-Conditional-Access-Policy-Overview.png)
+![Conditional Access Policy Overview](images/09-Conditional-Access-Policy-Overview.png)
 
 | Policy | Purpose |
 |---|---|
